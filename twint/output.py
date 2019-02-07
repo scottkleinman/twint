@@ -73,6 +73,9 @@ def _output(obj, output, config, **extra):
         elif config.Store_json:
             write.Json(obj, config)
             logme.debug(__name__+':_output:JSON')
+        elif config.Store_mongo:
+            write.Mongo(obj, config)
+            logme.debug(__name__+':_output:MONGO')
         else:
             write.Text(output, config.Output)
             logme.debug(__name__+':_output:Text')
